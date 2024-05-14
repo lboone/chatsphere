@@ -1,12 +1,14 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-const isProtectedRoute = createRouteMatcher([
+
+const isPublicRoute = createRouteMatcher([
   '/sign-in(.*)',
   '/sign-up(.*)',
+  '/api/uploadthing',
 ]);
 
 export default clerkMiddleware((auth, req) => {
-  if (!auth().userId && !isProtectedRoute(req)) {
+  if (!auth().userId && !isPublicRoute(req)) {
 
     // Add custom logic to run before redirecting
 
