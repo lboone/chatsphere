@@ -80,3 +80,13 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .cl-internal-180wb59 {
+    display: none;
+  }
+
+  .cl-avatarBox.cl-userButtonAvatarBox {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
