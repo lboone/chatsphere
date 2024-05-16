@@ -37,6 +37,7 @@ const NavigationSidebar = async () => {
               id={server.id}
               imageUrl={server.imageUrl}
               name={server.name}
+              isOwner={server.profileId === profile.id}
             />
           </div>
         ))}

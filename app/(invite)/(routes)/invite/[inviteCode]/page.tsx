@@ -4,10 +4,10 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import React from "react";
 
-interface InvigeCodePageProps {
+interface InviteCodePageProps {
   params: { inviteCode: string };
 }
-const InvigeCodePage = async ({ params }: InvigeCodePageProps) => {
+const InviteCodePage = async ({ params }: InviteCodePageProps) => {
   const profile = await currentProfile();
   if (!profile) {
     return redirect("/");
@@ -50,4 +50,4 @@ if(server) {
   return null
 };
 
-export default InvigeCodePage;
+export default InviteCodePage;
