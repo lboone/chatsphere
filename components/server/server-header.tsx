@@ -41,6 +41,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
   const isModerator = isAdmin || role === MemberRole.MODERATOR;
 
   return (
+    <div className="z-10">
     <DropdownMenu>
       <DropdownMenuTrigger className="focus:outline-none" asChild>
         <button className="w-full text-md font-semibold px-3 flex items-center h-12 border-neutral-200 dark:border-neutral-800 border-b-2 hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition">
@@ -49,7 +50,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 text-xs font-medium text-black dark:text-neutral-400 space-y-[2px] bg-zinc-200 dark:bg-zinc-900">
-        <DropdownMenuItem className={cn("px-3 py-2 text-sm", isAdmin ? "text-rose-300" : isModerator ? "text-indigo-300" : "text-zinc-300")}>
+        <DropdownMenuItem className={cn("px-3 py-2 text-sm pointer-events-none select-none font-mono", isAdmin ? "text-rose-300" : isModerator ? "text-indigo-300" : "text-zinc-300")}>
         {role || "GUEST"}
         {roleIconMap[role || "GUEST"]}
         </DropdownMenuItem>
@@ -111,6 +112,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
       </DropdownMenuContent>
     </DropdownMenu>
+    </div>
   );
 };
 
